@@ -1,0 +1,30 @@
+@page
+@model FochsoApiTester.Pages.Students.Students
+@{
+    ViewData["Title"] = "Students";
+}
+
+<h2>Student List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Class</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Student != null && Model.Student.Any())
+        {
+            @foreach (var std in Model.Student)
+            {
+                <tr>
+                    <td>@std.Id</td>
+                    <td>@std.Name</td>
+                    <td>@std.Class</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
